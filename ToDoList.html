@@ -18,27 +18,37 @@
 
     <title>To Do List</title>
 </head>
-<body style="background: #77787b">
-    <div class='container mt-5 d-flex flex-column align-items-center' id="app">
-        <!-- タイトル -->
-        <h1 class="mb-5">今日のやること</h1>
+<body style="background: black">
 
-        <div class="input-group mb-3 w-50">
-            <input type="text" class="form-control" placeholder="write a task" aria-label="Recipient's username" aria-describedby="button-addon" v-model="taskText" v-on:keydown.enter="makeTask" style="opacity: 0.9;">
-            <button class="btn btn-outline-info" type="button" id="button-addon" v-on:click="makeTask">Create</button>
-        </div>
+        <!-- メイン -->
+        <div class="position-absolute w-100">
+            <div class='container mt-5 d-flex flex-column align-items-center' id="app">
+                <!-- タイトル -->
+                <h1 class="mb-5 text-light">今日のやること</h1>
         
-        <!-- toDoListカードの表示 -->
-        <div v-for="(task, index) in tasks" class="my-1 col-9">
-            <div class="card my-1" style="background: rgba(255, 255, 255, 0.8);">
-                <div class="card-body">
-                    <h5 class="card-title my-3">TODO {{ index + 1 }} : {{ task.name }} </h5>
-                    <p class="my-3"> {{ task.date }} </p>
-                    <button href="#" class="btn btn-primary mt-2 w-100" v-on:click="removeTask( index )">complete!!!!!!</button>
+                <div class="input-group mb-3 w-50">
+                    <input type="text" class="form-control" placeholder="write a task" aria-label="Recipient's username" aria-describedby="button-addon" v-model="taskText" v-on:keydown.enter="makeTask" style="opacity: 0.9;">
+                    <button class="btn btn-outline-info" type="button" id="button-addon" v-on:click="makeTask">Create</button>
                 </div>
+                
+                <!-- toDoListカードの表示 -->
+                <div v-for="(task, index) in tasks" class="my-1 col-9">
+                    <div class="card my-1" style="background: rgba(255, 255, 255, 0.8);">
+                        <div class="card-body">
+                            <h5 class="card-title my-3">TODO {{ index + 1 }} : {{ task.name }} </h5>
+                            <p class="my-3"> {{ task.date }} </p>
+                            <button href="#" class="btn btn-primary mt-2 w-100" v-on:click="removeTask( index )">complete!!!!!!</button>
+                        </div>
+                    </div>
+                </div>
+        
             </div>
         </div>
+        
 
-    </div>
+
+        <!-- canvas -->
+        <canvas id="q"></canvas>
+    
 </body>
 </html>
