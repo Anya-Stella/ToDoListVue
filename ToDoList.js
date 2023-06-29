@@ -1,9 +1,9 @@
 // 背景描写
 window.onload = Matrix = () => {
     // canvas領域のサイズを画面サイズに設定する
-    const screen = window.screen;
-    const width = (q.width = screen.width);
-    const height = (q.height = screen.height);
+    const width = (q.width = document.documentElement.clientWidth);
+    const height = (q.height = document.documentElement.clientHeight);
+
   
     // 文字を255文字の座標を1で初期化する
     let letters = Array(256).join(1).split("");
@@ -40,7 +40,7 @@ window.onload = Matrix = () => {
   };
 
 
-  
+
 class Task {
     constructor(name, date){
         this.name = name;
