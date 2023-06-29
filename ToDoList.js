@@ -1,10 +1,11 @@
+// 背景描写
 window.onload = Matrix = () => {
     // canvas領域のサイズを画面サイズに設定する
     const screen = window.screen;
     const width = (q.width = screen.width);
     const height = (q.height = screen.height);
   
-    // 文字を256文字の座標を1で初期化する
+    // 文字を255文字の座標を1で初期化する
     let letters = Array(256).join(1).split("");
   
     const draw = () => {
@@ -14,7 +15,7 @@ window.onload = Matrix = () => {
       // 黒でcanvas領域を塗りつぶす(alpha 0.12)
       // 半透明の黒で塗りつぶすので、前回書き込まれた文字は薄暗くなるものの、1回の描画では真っ黒にならない
       // 塗りつぶしの色を設定
-      ctx.fillStyle = "rgba(0, 0, 0, .09";
+      ctx.fillStyle = "rgba(0, 0, 0, .09)";
       // 矩形領域を塗りつぶす
       ctx.fillRect(0, 0, width, height);
       // 文字の描画色を設定する
@@ -38,6 +39,8 @@ window.onload = Matrix = () => {
     setInterval(draw, 30);
   };
 
+
+  
 class Task {
     constructor(name, date){
         this.name = name;
