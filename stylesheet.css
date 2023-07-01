@@ -1,0 +1,14 @@
+.d-appear{
+    animation: d-appear 0.5s linear forwards;
+}
+.d-none{
+    animation: d-appear 0.5s linear reverse forwards;
+}
+@keyframes d-appear{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
